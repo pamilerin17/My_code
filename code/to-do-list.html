@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="to-do-list.css">
+    <script src="to-do-list.js"></script>
+    <title>TO-DO-LIST</title>
+</head>
+<body>
+
+    <div id="myDIV" class="header">
+        <h2 class="font">My Daily Schedule</h2>
+        <input type="text" id="myInput" placeholder="New Schedule...">
+        <span onclick="newElement()" class="addBtn">Add</span>
+      </div>
+      
+      <ul id="myUL">
+        <li>Go to Aptech</li>
+        <li class="checked">Be back by 3pm</li>
+        <li>Cook,shower,sleep</li>
+        <li>Code</li>
+        <li>Take a break after 3 hours</li>
+        <li>Repeat same schdule for Mondays,Wednesdays and Fridays</li>
+      </ul>
+    
+      <script>
+        var myUL = document.getElementById("myUL").children;
+var counter;
+function lineThrough(){ 
+for(counter = 0; counter <= myUL.length; ++counter){ 
+    myUL[counter].addEventListener("click", function(){ 
+        if(this.className == "checked"){ 
+            this.className = ""
+        }
+        else{ 
+          this.className = "checked"
+        }
+    })
+}
+}
+
+lineThrough();
+      </script>
+</body>
+</html>
